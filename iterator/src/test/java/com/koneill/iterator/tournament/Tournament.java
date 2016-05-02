@@ -71,7 +71,7 @@ public class Tournament {
   /**
    * Get all players
    */
-  public List<Player> getItems() {
+  public List<Player> getPlays() {
     List<Player> list = new ArrayList<>();
     list.addAll(players);
     return list;

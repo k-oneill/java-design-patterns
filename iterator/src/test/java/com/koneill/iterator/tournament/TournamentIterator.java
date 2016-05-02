@@ -31,15 +31,15 @@ import java.util.List;
  */
 public class TournamentIterator implements Iterator {
 
-  private Tournament chest;
+  private Tournament name;
   private int idx;
   private Block type;
 
   /**
    * Constructor
    */
-  public TournamentIterator(Tournament chest, Block type) {
-    this.chest = chest;
+  public TournamentIterator(Tournament name, Block type) {
+    this.name = name;
     this.type = type;
     this.idx = -1;
   }
@@ -53,14 +53,14 @@ public class TournamentIterator implements Iterator {
   public Player next() {
     idx = findNextIdx();
     if (idx != -1) {
-      return chest.getItems().get(idx);
+      return name.getPlays().get(idx);
     }
     return null;
   }
 
   private int findNextIdx() {
 
-    List<Player> players = chest.getItems();
+    List<Player> players = name.getPlays();
     boolean found = false;
     int tempIdx = idx;
     while (!found) {
