@@ -30,32 +30,36 @@ package com.koneill.iterator.tournament;
 public class App {
 
   public static void main(String[] args) {
-    Tournament chest = new Tournament();
+    Tournament name = new Tournament();
    
-    System.out.println("--- A Block Elimnation ---");
-
-    Iterator moneyIterator = chest.iterator(Block.A);
-    while (moneyIterator.hasNext()) {
-      System.out.println(moneyIterator.next());
+	System.out.println("");    	
+    System.out.println("--- A Block ---");
+    
+    Iterator aIterator = name.iterator(Block.A);
+    while (aIterator.hasNext()) {
+    	System.out.println(aIterator.next()+" vs "+aIterator.next());
     }
 
-    System.out.println("--- B Block Elimnation ---");
+	System.out.println("");    	
+    System.out.println("--- B Block ---");
 
-    Iterator ringIterator = chest.iterator(Block.B);
-    while (ringIterator.hasNext()) {
-      System.out.println(ringIterator.next());
+    Iterator bIterator = name.iterator(Block.B);
+    while (bIterator.hasNext()) {
+    	System.out.println(bIterator.next()+" vs "+bIterator.next());
     }
 
-    System.out.println("--- C Block Elimnation ---");
+	System.out.println("");    	
+    System.out.println("--- C Block ---");
 
-    Iterator potionIterator = chest.iterator(Block.C);
-    while (potionIterator.hasNext()) {
-      System.out.println(potionIterator.next());
+    Iterator cIterator = name.iterator(Block.C);
+    while (cIterator.hasNext()) {
+    	System.out.println(cIterator.next()+" vs "+cIterator.next());
     }
 
+	System.out.println("");    	
     System.out.println("--- All Player's List ---");
 
-    Iterator it = chest.iterator(Block.ANY);
+    Iterator it = name.iterator(Block.ANY);
     while (it.hasNext()) {
       System.out.println(it.next());
     }

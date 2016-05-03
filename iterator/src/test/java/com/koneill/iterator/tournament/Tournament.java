@@ -23,9 +23,8 @@
 package com.koneill.iterator.tournament;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-
-//import com.oneill.dragonball.Announcement.Name;
 
 /**
  * 
@@ -41,31 +40,67 @@ public class Tournament {
    */
   public Tournament() {
 	players = new ArrayList<>();
+
+	// Player name
+	String[] playerList = new String[20];
+	playerList[0] = "Goku";
+	playerList[1] = "Gohan";
+	playerList[2] = "Goten";
+	playerList[3] = "Vegeta";
+	playerList[4] = "Trunks";
+	playerList[5] = "Kame-Sennin";
+	playerList[6] = "Kuririn";
+	playerList[7] = "Yamucha";
+	playerList[8] = "Tenshinhan";
+	playerList[9] = "Chaozu";
+	playerList[10] = "Piccolo";
+	playerList[11] = "Freeza";
+	playerList[12] = "Cell";
+	playerList[13] = "Majin-Boo";
+	playerList[14] = "Android#18";
+	playerList[15] = "Nappa";
+	playerList[16] = "Raditz";
+	playerList[17] = "Ginyu";
 	
-	//Block A Elimination
-	players.add(new Player(Block.A, "Goku"));
-	players.add(new Player(Block.A, "Kame-Sennin"));
-	players.add(new Player(Block.A, "Yamucha"));
-	players.add(new Player(Block.A, "Kuririn"));
-	players.add(new Player(Block.A, "Tenshinhan"));
+	// count player
+	int count = 0;	
+	for (int i = 0; i < playerList.length; i++) {
+		if (playerList[i]!=(null)) {
+			count++;
+		}
+	}
+	System.out.println("出場選手" + count + "名");
 
-	//Block B Elimination
-	players.add(new Player(Block.B, "Piccolo"));
-	players.add(new Player(Block.B, "Freeza"));
-	players.add(new Player(Block.B, "Cell"));
-	players.add(new Player(Block.B, "Majin-Boo"));
+	//shuffled number
+	ArrayList<Integer> NumberList = new ArrayList<Integer>();
+	for(int i = 0 ; i < count ; i++) {
+		NumberList.add(i);
+	 }
+	Collections.shuffle(NumberList);
+	
+	//add player to players[]
+	for (int i = 0; i < count; i++) {
 
-	//Block C Elimination
-	players.add(new Player(Block.C, "Vegeta"));
-	players.add(new Player(Block.C, "Nappa"));
-	players.add(new Player(Block.C, "Bordock"));
-	players.add(new Player(Block.C, "Radotz"));
-	players.add(new Player(Block.C, "Broly"));
-	players.add(new Player(Block.C, "Saibai-Man"));    
+		//int number = new java.util.Random().nextInt(count);
+		int number =  NumberList.get(i);
+		int j = 6;
+		if (number >= 0 && number < j ) {
+			players.add(new Player(Block.A, playerList[i]));
+		
+		} else if (number >= j && number < j*2 ) {
+			players.add(new Player(Block.B, playerList[i]));
+	
+		} else if (number >= j*2 && number < j*3 ) {
+			players.add(new Player(Block.C, playerList[i]));
+			
+		} else {
+			System.out.println("over" + playerList[i]);
+		}
+	}	
   }
 
-  Iterator iterator(Block Block) {
-    return new TournamentIterator(this, Block);
+  Iterator iterator(Block block) {
+    return new TournamentIterator(this, block);
   }
 
   /**
