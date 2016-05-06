@@ -36,20 +36,11 @@ public class App {
 
   /**
    * Program entry point
-   * @param args command line args
-   *
-   * D20160502 //add item MONEY
    * 
+   * @param args command line args
    */
   public static void main(String[] args) {
     TreasureChest chest = new TreasureChest();
-   
-     ItemIterator moneyIterator = chest.iterator(ItemType.MONEY);
-    while (moneyIterator.hasNext()) {
-      System.out.println(moneyIterator.next());
-    }
-
-    System.out.println("----------");
 
     ItemIterator ringIterator = chest.iterator(ItemType.RING);
     while (ringIterator.hasNext()) {

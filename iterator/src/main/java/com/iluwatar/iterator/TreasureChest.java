@@ -36,11 +36,9 @@ public class TreasureChest {
 
   /**
    * Constructor
-   * D20160502 //add item MONEY
    */
   public TreasureChest() {
     items = new ArrayList<>();
-    items.add(new Item(ItemType.MONEY, "Money of gold"));
     items.add(new Item(ItemType.POTION, "Potion of courage"));
     items.add(new Item(ItemType.RING, "Ring of shadows"));
     items.add(new Item(ItemType.POTION, "Potion of wisdom"));

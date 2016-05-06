@@ -26,11 +26,9 @@ package com.iluwatar.iterator;
  * 
  * ItemType enumeration
  *
- * D20160502 //add item MONEY
- *
  */
 public enum ItemType {
 
-  ANY, WEAPON, RING, POTION, MONEY
+  ANY, WEAPON, RING, POTION
 
 }
